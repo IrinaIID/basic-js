@@ -17,14 +17,14 @@ class DepthCalculator {
     // throw new NotImplementedError('Not implemented');
     // remove line with error and write your code here
 
-    let count = 1;
+    // let count = 1;
 
-    while(arr.some(a => Array.isArray(a))) {
-      arr.flat();
-      count += 1;
-    }
-    
-    return count;
+    // while(!arr.some(a => Array.isArray(a))) {
+    //   arr.flat();
+    //   count += 1;
+    // }
+
+    // return count;
   }
 }
 
