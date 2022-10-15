@@ -15,7 +15,8 @@ function getSeason(date) {
   // throw new NotImplementedError('Not implemented');
   // remove line with error and write your code here
   if(typeof date === 'undefined') { return 'Unable to determine the time of year!'}
-  if (isNaN(Date.parse(date))) { return Error('Invalid date!') }
+  if (isNaN(Date.parse(date))) { throw new Error('Invalid date!') }
+
 
   let monthNum = date.getMonth();
   let result = (monthNum === 11 || monthNum <= 1) ? 'winter' : (monthNum <= 4) ? 'spring' : (monthNum <= 7) ? 'summer' : 'autumn';
