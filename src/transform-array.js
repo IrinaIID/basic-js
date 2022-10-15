@@ -16,7 +16,7 @@ const { NotImplementedError } = require('../extensions/index.js');
 function transform(arr) {
   // throw new NotImplementedError('Not implemented');
   // remove line with error and write your code here
-   if (!Array.isArray(arr)) {return Error('\'arr\' parameter must be an instance of the Array!')};
+   if (!Array.isArray(arr)) {throw Error('\'arr\' parameter must be an instance of the Array!')};
    if (arr.length ===0) {return []}
 
    let result = [];
@@ -34,7 +34,7 @@ function transform(arr) {
 
    if (type === 1) {
      arr.forEach (function(e, ind) {
-       if(!ind === index && !ind === index + 1) {
+       if(ind !== index && ind !== index + 1) {
         result.push(e)
        }
      })
@@ -42,7 +42,7 @@ function transform(arr) {
 
    if (type === 2) {
     arr.forEach (function(e, ind) {
-      if(!ind === index && !ind === index - 1) {
+      if(ind !== index && ind !== index - 1) {
        result.push(e)
       }
     })
@@ -53,7 +53,7 @@ function transform(arr) {
       if(ind === index + 1) {
         result.push(e * 2)
        }
-      if(!ind === index && !ind === index + 1) {
+      if(ind !== index && ind !== index + 1) {
        result.push(e)
       }
     })
@@ -64,7 +64,7 @@ function transform(arr) {
       if(ind === index - 1) {
         result.push(e * 2)
        }
-      if(!ind === index && !ind === index - 1) {
+      if(ind !== index && ind !== index - 1) {
        result.push(e)
       }
     })
