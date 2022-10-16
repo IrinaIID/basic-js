@@ -19,10 +19,41 @@ function repeater(str, options) {
   // throw new NotImplementedError('Not implemented');
   // remove line with error and write your code here
 
-  let result = '';
-  
+  let result = String(str);
+  let add = '';
 
+  if ( options.addition ) {
+    add = String(options.addition);
+    if ( options.additionSeparator && options.additionRepeatTimes ) {
+      add += options.additionSeparator;
+      add = add.repeat(options.additionRepeatTimes);
+      let lengthSep = options.additionSeparator.length;
+      add = add.slice(0, add.length - lengthSep);
+    } else {
+      if (options.additionRepeatTimes) {
+        add += '|';
+        add = add.repeat(options.additionRepeatTimes);
+        add = add.slice(0, add.length - 1);
+      }
+    }
+  }
 
+  result += add;
+
+  if(options.repeatTimes && options.separator) {
+    result += options.separator;
+    result = result.repeat(options.repeatTimes);
+    let lengthSep = options.separator.length;
+    result = result.slice(0, result.length - lengthSep);
+  } else {
+    if(options.repeatTimes) {
+      result += '+';
+      result = result.repeat(options.repeatTimes);
+      result = result.slice(0, result.length - 1);
+    }
+  }
+
+  return result
 
 }
 
