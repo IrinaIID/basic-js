@@ -23,26 +23,16 @@ function getSumOfDigits(n) {
     arrNumers.push(+e)
   })
 
-    // console.log(arrNumers)
-
 
   function sum(x) {
-      let total;
-    let res = x.reduce((acc, elem) => {
+    if (x.length === 1) {return x[0]}
+    let sum = x.reduce((acc, elem) => {
       return acc + elem;
     }, 0);
-      // console.log(res)
-    let res2 = res.toString().split('');
-      console.log(res2)
-    let res3 = res2.map(elem => { return +elem});
-      // console.log(res3)
-      if(res3.length === 1) {total = res3}
-      else {sum(res3)}
-      return total
-
+    let arrSum = sum.toString().split('');
+    sum(arrSum)
   }
 
-  let result = sum(arrNumers)
   return sum(arrNumers)
 
 }
